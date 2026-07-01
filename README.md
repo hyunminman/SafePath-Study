@@ -1,2 +1,2 @@
 # SafePath-Study
-보안 공
+보안 공부
