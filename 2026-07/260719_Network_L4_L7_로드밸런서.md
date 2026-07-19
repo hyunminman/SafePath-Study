@@ -24,3 +24,4 @@
 /images로 들어오는 요청은 정적 미디어 서버(CDN 등)로 라우팅
 
 보안 관점의 이점: WAF(Web Application Firewall)와 연동하여 SQL Injection, XSS 등의 악의적인 페이로드가 포함된 HTTP 요청을 L7 단에서 사전에 필터링하고 차단할 수 있다.
+ 
