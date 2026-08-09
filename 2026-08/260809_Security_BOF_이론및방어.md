@@ -14,28 +14,8 @@
 
 입력을 받는 취약한 부분을 vuln() 함수로 분리하여 작성했다. 만약 오버플로우가 발생해 복귀 주소(RET)가 파괴된다면, main() 함수로 돌아오지 못해 프로그램 마지막의 종료 문구(exit.)가 출력되지 않을 것이다.
 
-#include <stdio.h>
-#include <string.h>
+<img width="1144" height="466" alt="image" src="https://github.com/user-attachments/assets/d4491299-ee4f-485d-860d-2f268a1e0686" />
 
-void vuln() {
-    char buffer[16]; // 16바이트 크기의 그릇(버퍼) 생성
-
-    printf("password: ");
-    
-    // [취약점] gets() 함수는 입력 데이터의 길이를 전혀 검사하지 않습니다.
-    gets(buffer); 
-
-    printf("good: %s\n", buffer);
-}
-
-int main() {
-    vuln(); // 취약한 함수 실행
-
-    // vuln() 함수에서 RET가 파괴되면 아래 문구는 영원히 실행되지 않음
-    printf("exit.\n"); 
-    
-    return 0;
-}
 
 
 3. 프로그램 컴파일 (Windows 환경)
